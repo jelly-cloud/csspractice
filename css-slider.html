@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+      *{
+        margin:auto;
+      }
+      .slider{
+        width: 400px;
+        height: 400px;
+        position: relative;
+        overflow:hidden;
+      }
+      .slider .slides{
+        position: absolute;
+        width:9999px;
+        left:0;
+        top:0;
+        transition:left 1s;
+      }
+      img{
+        border-radius:10px
+      }
+      .slider .slides .slide{
+        width:400px;
+        height: 400px;
+        float:left;
+        position: relative;
+      }
+      .slide label.prev,
+      .slide label.next
+      {
+        position: absolute;
+        top:0;
+        bottom:0;
+        margin:auto;
+        height:50px;
+
+        line-height:50px;
+        color:white;
+        font-size:40px
+      }
+      .slide label.prev{
+        left:10px;
+
+        border-radius:10px 0 0 10px;
+      }
+      .slide label.next{
+        right:10px;
+        border-radius: 0  10px 10px 0 ;
+      }
+      input{
+        position: relative;
+        z-index:8;
+        top:375px;
+        left:175px;
+      }
+      .slides img{
+        width:100%;
+        height:100%;
+      }
+      input:first-child:checked ~ div.slides{
+        left:0;
+      }
+      input:nth-child(2):checked ~ div.slides{
+        left:-400px;
+      }
+      input:nth-child(3):checked ~ div.slides{
+        left:-800px;
+      }
+      input:nth-child(4):checked ~ div.slides{
+        left:-1200px;
+      }</style>
+  </head>
+  <body>
+    <section class="slider">
+      <input type="radio" name="slider" id="i1">
+      <input type="radio" name="slider" id="i2">
+      <input type="radio" name="slider" id="i3">
+      <input type="radio" name="slider" id="i4">
+      <div class="slides">
+        <div class="slide">
+          <label for="i4" class="prev">&laquo;</label>
+          <label for="i2" class="next">&raquo;</label>
+          <img id="i1" src="https://wxt.sinaimg.cn/thumb300/6f87f2a4gy1fkt0wtara8j20wi0lo0w6.jpg?tags=%5B%5D">
+        </div>
+        <div class="slide">
+          <label for="i1" class="prev">&laquo;</label>
+          <label for="i3" class="next">&raquo;</label>
+          <img id="i2" src="https://wxt.sinaimg.cn/thumb300/6f87f2a4gy1fkt0wszimbj20wi0lon1p.jpg?tags=%5B%5D">
+        </div>
+        <div class="slide"> 
+          <label for="i2" class="prev">&laquo;</label>
+          <label for="i4" class="next">&raquo;</label>
+          <img id="i3" src="https://wxt.sinaimg.cn/thumb300/6f87f2a4gy1fkt0wsyuv1j20wi0lotcd.jpg?tags=%5B%5D">
+        </div>
+        <div class="slide">
+          <label for="i3" class="prev">&laquo;</label>
+          <label for="i1" class="next">&raquo;</label>
+          <img id="i4" src="https://wxt.sinaimg.cn/thumb300/6f87f2a4gy1fkt0wt87zrj20wi0logqy.jpg?tags=%5B%5D">
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
